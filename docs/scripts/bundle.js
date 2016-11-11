@@ -46,18 +46,18 @@ var driver = function driver(e) {
 				meter(0);
 			}
 
-	if (z > 10) {
-		if (z < 30) {
+	if (y > 10) {
+		if (y < 30) {
 			handle('left-1');
-		} else if (z < 50) {
+		} else if (y < 50) {
 			handle('left-2');
 		} else {
 			handle('left-3');
 		}
-	} else if (z < -10) {
-		if (z > -30) {
+	} else if (y < -10) {
+		if (y > -30) {
 			handle('right-1');
-		} else if (z > -50) {
+		} else if (y > -50) {
 			handle('right-2');
 		} else {
 			handle('right-3');
