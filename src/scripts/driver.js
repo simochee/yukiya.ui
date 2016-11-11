@@ -37,18 +37,18 @@ const driver = (e) => {
 		meter(0);
 	}
 
-	if(y > 10) {
-		if(y < 30) {
+	if(y > 10 && y < 170) {
+		if(y < 30 || y < 150) {
 			handle('left-1');
-		} else if(y < 50) {
+		} else if(y < 50 || 120) {
 			handle('left-2');
 		} else {
 			handle('left-3');
 		}
-	} else if(y < -10) {
-		if(y > -30) {
+	} else if(y < -10 && y > -170) {
+		if(y > -30 || y > -150) {
 			handle('right-1');
-		} else if(y > -50) {
+		} else if(y > -50 || y > -120) {
 			handle('right-2');
 		} else {
 			handle('right-3');
