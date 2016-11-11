@@ -17,20 +17,20 @@ const driver = (e) => {
 	 * 値を送信
 	 */
 
-	// 停止判定
-	if(60 > z && z < -60) {
-		monitor('STOP');
-		meter(0);
-	}
 	// 前進判定
-	else if(z <= 60 && z > 0) {
+	if(z <= 60 && z > 0) {
 		monitor('FORWERD');
 		meter(1 - z / 60)
 	}
 	// 後進判定
-	else {
+	else if(z >= -60 && z < 0) {
 		monitor('BACK');
 		meter(1 - Math.abs(z) / 60);
+	}
+	// 停止判定
+	else {
+		monitor('STOP');
+		meter(0);
 	}
 
 	 $('#status').text(`${y} / ${z}`);
