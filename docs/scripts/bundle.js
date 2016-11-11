@@ -59,7 +59,7 @@ var driver = function driver(e) {
 			}
 		} else if (abs_y >= Y_THR && abs_y <= 90) {}
 
-		$('#status').text(y + ' / ' + z + ', ' + (FR_THR - abs_z));
+		$('#status').text(y + ' / ' + z + ', abs ? ' + (FR_THR - abs_z));
 	}
 };
 

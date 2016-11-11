@@ -54,7 +54,7 @@ const driver = (e) => {
 
 		}
 
-		$('#status').text(`${y} / ${z}, ${FR_THR - abs_z}`)
+		$('#status').text(`${y} / ${z}, abs ? ${FR_THR - abs_z}`)
 	}
 }
 
