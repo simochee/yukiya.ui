@@ -14,8 +14,8 @@ const handle = (step) => {
 }
 
 const driver = (e) => {
-	const y = Math.round(e.beta);
-	const z = Math.round(e.gamma);
+	const y = e.beta;
+	const z = e.gamma;
 
 	/*
 	 * 値を送信

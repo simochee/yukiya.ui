@@ -23,8 +23,8 @@ var handle = function handle(step) {
 };
 
 var driver = function driver(e) {
-	var y = Math.round(e.beta);
-	var z = Math.round(e.gamma);
+	var y = e.beta;
+	var z = e.gamma;
 
 	/*
   * 値を送信
