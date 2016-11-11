@@ -1,11 +1,8 @@
-const socket = {
-	emit: () => {}
-};
-let timer = 0;
-
-const FR_THR = 40;
-const BK_THR = 60;
-const Y_THR = 40;
+const meter = (speed) => {
+	$('#guideline').css({
+		transform: `rotate(${speed * 250 - 35}deg)`
+	});
+}
 
 const driver = (e) => {
 	const y = Math.round(e.beta);
@@ -15,8 +12,20 @@ const driver = (e) => {
 	 * 値を送信
 	 */
 
-	 $('#status').text(`${y} / ${z}`);
+	// 停止判定
+	if(60 > z && z < -60) {
+		meter(0);
+	}
+	// 後進判定
+	else if(z <= 60 && z > 0) {
+		meter(z / 60)
+	}
+	// 前進判定
+	else {
+		meter(Math.abs(z) / 60);
+	}
 
+	 $('#status').text(`${y} / ${z}`);
 }
 
 window.addEventListener('deviceorientation', driver);

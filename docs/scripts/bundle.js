@@ -7,14 +7,11 @@ $(function () {
 });
 'use strict';
 
-var socket = {
-	emit: function emit() {}
+var meter = function meter(speed) {
+	$('#guideline').css({
+		transform: 'rotate(' + (speed * 250 - 35) + 'deg)'
+	});
 };
-var timer = 0;
-
-var FR_THR = 40;
-var BK_THR = 60;
-var Y_THR = 40;
 
 var driver = function driver(e) {
 	var y = Math.round(e.beta);
@@ -23,6 +20,19 @@ var driver = function driver(e) {
 	/*
   * 値を送信
   */
+
+	// 停止判定
+	if (60 > z && z < -60) {
+		meter(0);
+	}
+	// 後進判定
+	else if (z <= 60 && z > 0) {
+			meter(z / 60);
+		}
+		// 前進判定
+		else {
+				meter(Math.abs(z) / 60);
+			}
 
 	$('#status').text(y + ' / ' + z);
 };
