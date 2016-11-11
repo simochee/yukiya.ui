@@ -6,12 +6,13 @@ html(lang="ja")
 		title Controller
 		link(rel="stylesheet" href="stylesheets/ionicons.min.css")
 		link(rel="stylesheet" href="stylesheets/main.css")
-		script(src="scripts/main.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+		script(src="scripts/bundle.js")
 	body
-		.wrapper
+		.wrapper#wrapper
 			.label フルスクリーン
 				small にする
-			.text 画面をタップしてください
+			.text 画面をタップ
 		.controller#controller
 			.tachometer
 				.bar.s0: .l

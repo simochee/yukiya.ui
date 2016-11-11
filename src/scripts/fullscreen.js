@@ -1,3 +1,5 @@
-(() => {
-	console.log(document.webkitFullscreenElement);
-})();
+$(function() {
+	$('#wrapper').on('click', () => {
+		document.getElementById('controller').webkitRequestFullScreen();
+	});
+});

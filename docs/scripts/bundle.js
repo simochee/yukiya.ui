@@ -1,6 +1,8 @@
-"use strict";
+'use strict';
 
-(function () {
-	console.log(document.webkitFullscreenElement);
-})();
+$(function () {
+	$('#wrapper').on('click', function () {
+		document.getElementById('controller').webkitRequestFullScreen();
+	});
+});
 "use strict";
