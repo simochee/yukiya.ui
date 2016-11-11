@@ -19,10 +19,13 @@ const driver = (e) => {
 			if(z > 0) {
 				// 前進
                 socket.emit("straight", FR_THR, FR_THR - abs_z);
+                $('#guideline').css({
+                	// transform: `rotate(${((FR_THR - abs_z) / ) - 35}deg)`
+                });
 			}
 		}
 
-		$('#status').text(`${y} / ${z}`)
+		$('#status').text(`${y} / ${z}, ${FR_THR - abs_z}`)
 	}
 }
 
