@@ -59,6 +59,13 @@ var driver = function driver(e) {
 				});
 				$('#monitor').text('STOP');
 			}
+		} else {
+			// 停止
+			socket.emit("stop");
+			$('#guideline').css({
+				transform: 'rotate(0)'
+			});
+			$('#monitor').text('STOP');
 		}
 
 		$('#status').text(y + ' / ' + z + ', abs ? ' + (FR_THR - abs_z));
