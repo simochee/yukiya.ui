@@ -16,6 +16,7 @@ const driver = (e) => {
 		const abs_z = Math.abs(z);
 
 		if(abs_z <= FR_THR) {
+			$('#message').text('Forwerd')
 			if(z > 0) {
 				// 前進
                 socket.emit("straight", FR_THR, FR_THR - abs_z);
