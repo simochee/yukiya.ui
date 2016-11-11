@@ -238,7 +238,9 @@ html, body {
     top: 50%;
     height: 300px;
     margin-top: -150px;
-    line-height: 300px; }
+    line-height: 300px;
+    color: #000;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
     .handle .body .arrow.step1 {
       font-size: 200px; }
     .handle .body .arrow.step2 {
@@ -248,11 +250,43 @@ html, body {
   .handle .body.left {
     left: 0; }
     .handle .body.left .step1 {
-      left: 0; }
+      left: 140px; }
     .handle .body.left .step2 {
       left: 70px; }
     .handle .body.left .step3 {
-      left: 140px; }
+      left: 0; }
+  .handle .body.right {
+    right: 0; }
+    .handle .body.right .step1 {
+      right: 140px; }
+    .handle .body.right .step2 {
+      right: 70px; }
+    .handle .body.right .step3 {
+      right: 0; }
+
+.handle[data-step="left-1"] .left .step1, .handle[data-step="left-2"] .left .step1, .handle[data-step="left-3"] .left .step1 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
+
+.handle[data-step="left-2"] .left .step2, .handle[data-step="left-3"] .left .step2 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
+
+.handle[data-step="left-3"] .left .step3 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
+
+.handle[data-step="right-1"] .right .step1, .handle[data-step="right-2"] .right .step1, .handle[data-step="right-3"] .right .step1 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
+
+.handle[data-step="right-2"] .right .step2, .handle[data-step="right-3"] .right .step2 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
+
+.handle[data-step="right-3"] .right .step3 {
+  color: lightgreen;
+  text-shadow: 0 0 15px rgba(144, 238, 144, 0.9); }
 
 .wrapper {
   position: absolute;

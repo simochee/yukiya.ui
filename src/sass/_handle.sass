@@ -11,6 +11,8 @@
 			height: 300px
 			margin-top: -150px
 			line-height: 300px
+			color: #000
+			text-shadow: 0 0 10px rgba(#000, 0.5)
 			&.step1
 				font-size: 200px
 			&.step2
@@ -20,8 +22,54 @@
 		&.left
 			left: 0
 			.step1
-				left: 0
+				left: 140px
 			.step2
 				left: 70px
 			.step3
-				left: 140px
+				left: 0
+		&.right
+			right: 0
+			.step1
+				right: 140px
+			.step2
+				right: 70px
+			.step3
+				right: 0
+		
+	$light: lightgreen
+	&[data-step="left-1"],
+	&[data-step="left-2"],
+	&[data-step="left-3"]
+		.left
+			.step1
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)
+	&[data-step="left-2"],
+	&[data-step="left-3"]
+		.left
+			.step2
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)
+	&[data-step="left-3"]
+		.left
+			.step3
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)
+	&[data-step="right-1"],
+	&[data-step="right-2"],
+	&[data-step="right-3"]
+		.right
+			.step1
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)
+	&[data-step="right-2"],
+	&[data-step="right-3"]
+		.right
+			.step2
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)
+	&[data-step="right-3"]
+		.right
+			.step3
+				color: $light
+				text-shadow: 0 0 15px rgba($light, 0.9)

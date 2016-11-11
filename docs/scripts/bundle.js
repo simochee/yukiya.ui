@@ -18,6 +18,10 @@ var monitor = function monitor(state) {
 	$('#monitor').attr('data-state', state);
 };
 
+var handle = function handle(step) {
+	$('#handle').attr('data-step', step);
+};
+
 var driver = function driver(e) {
 	var y = Math.round(e.beta);
 	var z = Math.round(e.gamma);
@@ -41,6 +45,26 @@ var driver = function driver(e) {
 				monitor('stop');
 				meter(0);
 			}
+
+	if (z > 10) {
+		if (z < 30) {
+			handle('left-1');
+		} else if (z < 50) {
+			handle('left-2');
+		} else {
+			handle('left-3');
+		}
+	} else if (z < 10) {
+		if (z > -30) {
+			handle('right-1');
+		} else if (z > -50) {
+			handle('right-2');
+		} else {
+			handle('right-3');
+		}
+	} else {
+		handle('horizontal');
+	}
 
 	$('#status').text(y + ' / ' + z);
 };

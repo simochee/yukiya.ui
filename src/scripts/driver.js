@@ -9,6 +9,10 @@ const monitor = (state) => {
 	$('#monitor').attr('data-state', state);
 }
 
+const handle = (step) => {
+	$('#handle').attr('data-step', step);
+}
+
 const driver = (e) => {
 	const y = Math.round(e.beta);
 	const z = Math.round(e.gamma);
@@ -31,6 +35,26 @@ const driver = (e) => {
 	else {
 		monitor('stop');
 		meter(0);
+	}
+
+	if(z > 10) {
+		if(z < 30) {
+			handle('left-1');
+		} else if(z < 50) {
+			handle('left-2');
+		} else {
+			handle('left-3');
+		}
+	} else if(z < 10) {
+		if(z > -30) {
+			handle('right-1');
+		} else if(z > -50) {
+			handle('right-2');
+		} else {
+			handle('right-3');
+		}
+	} else {
+		handle('horizontal');
 	}
 
 	 $('#status').text(`${y} / ${z}`);
