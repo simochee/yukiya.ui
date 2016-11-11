@@ -11,15 +11,17 @@ $(function () {
 var timer = 0;
 
 var driver = function driver(e) {
-	try {
+	var y = Math.round(e.beta);
+	var z = Math.round(e.gamma);
+	if (new Date() - timer > 200) {
+		timer = new Date();
+		var abs_y = Math.abs(y);
+		var abs_z = Math.abs(z);
 
-		var y = Math.round(e.beta);
-		var z = Math.round(e.gamma);
-
-		$('#status').text(z + ' / ' + y);
-	} catch (e) {
-		$('#status').text(e);
+		$('#status').text(y + ' / ' + z);
 	}
+
+	$('#status').text(z + ' / ' + y);
 };
 
 window.addEventListener('deviceorientation', driver);
