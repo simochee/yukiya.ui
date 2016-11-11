@@ -5,8 +5,8 @@ const meter = (speed) => {
 	});
 }
 
-const monitor = (msg) => {
-	$('#monitor').text(msg);
+const monitor = (state) => {
+	$('#monitor').attr('data-state', state);
 }
 
 const driver = (e) => {
@@ -19,17 +19,17 @@ const driver = (e) => {
 
 	// 前進判定
 	if(z <= 60 && z > 0) {
-		monitor('FORWERD');
+		monitor('forward');
 		meter(1 - z / 60)
 	}
 	// 後進判定
 	else if(z >= -60 && z < 0) {
-		monitor('BACK');
+		monitor('back');
 		meter(1 - Math.abs(z) / 60);
 	}
 	// 停止判定
 	else {
-		monitor('STOP');
+		monitor('stop');
 		meter(0);
 	}
 

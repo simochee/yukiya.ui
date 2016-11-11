@@ -158,16 +158,32 @@
 			bottom: darken($color, 6%) solid 3px
 		.monitor
 			$monitor: #80a09f
+			position: relative
+			overflow: hidden
 			width: 100%
 			height: 100%
 			background: $monitor
 			box-shadow: inset 0 2px 4px rgba(#000, 0.3)
-			.text
+			&[data-state="forward"]
+				.inner
+					top: 0
+			&[data-state="stop"]
+				.inner
+					top: -30px
+			&[data-state="back"]
+				.inner
+					top: -60px
+			.inner
+				position: absolute
 				width: 100%
-				height: 30px
-				line-height: 30px
-				text-align: center
-				font-size: 16px
-				color: darken($monitor, 40%)
-				text-shadow: 0 0 10px rgba(#000, 0.5)
-				font-family: 'Unica One', cursive
+				height: 90px
+				transition: top 0.5s ease
+				.text
+					width: 100%
+					height: 30px
+					line-height: 30px
+					text-align: center
+					font-size: 16px
+					color: darken($monitor, 40%)
+					text-shadow: 0 0 10px rgba(#000, 0.5)
+					font-family: 'Unica One', cursive

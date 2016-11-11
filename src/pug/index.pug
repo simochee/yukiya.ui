@@ -40,8 +40,11 @@ html(lang="ja")
 				.speed.s100: .char 100
 
 				.display
-					.monitor
-						.text#monitor LOADING
+					.monitor#monitor(data-state="stop")
+						.inner
+							.text.forward FORWARD
+							.text.stop STOP
+							.text.back BACK
 
 			.status
 				#status ::: Status Informations :::
