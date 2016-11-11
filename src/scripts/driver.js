@@ -17,7 +17,7 @@ const driver = (e) => {
 
 		if(abs_z <= FR_THR) {
 			$('#message').text('Forwerd')
-			if(z > 0) {
+			if(z < 0) {
 				// 前進
                 socket.emit("straight", FR_THR, FR_THR - abs_z);
                 $('#guideline').css({
@@ -32,10 +32,7 @@ const driver = (e) => {
                 });
 				$('#monitor').text('STOP'); 
 			}
-ｔ    	}
-		else if(abs_y >= Y_THR && abs_y <= 90) {
-
-		}
+    	}
     	else if(abs_z <= BK_THR) {
     		if(z > 0) {
     			// 後進
@@ -52,6 +49,9 @@ const driver = (e) => {
                 });
 				$('#monitor').text('STOP'); 
     		}
+		}
+		else if(abs_y >= Y_THR && abs_y <= 90) {
+
 		}
 
 		$('#status').text(`${y} / ${z}, ${FR_THR - abs_z}`)
