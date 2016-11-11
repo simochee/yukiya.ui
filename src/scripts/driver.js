@@ -28,7 +28,7 @@ const driver = (e) => {
 				// 停止
                 socket.emit("stop");
                 $('#guideline').css({
-                	transform: `rotate(0)`
+                	transform: `rotate(35deg)`
                 });
 				$('#monitor').text('STOP'); 
 			}
@@ -50,15 +50,16 @@ const driver = (e) => {
 				// 停止
                 socket.emit("stop");
                 $('#guideline').css({
-                	transform: `rotate(0)`
+                	transform: `rotate(35deg)`
                 });
 				$('#monitor').text('STOP'); 
     		}
 		} else {
+			$('#message').text('Stop')
 			// 停止
             socket.emit("stop");
             $('#guideline').css({
-            	transform: `rotate(0)`
+            	transform: `rotate(35deg)`
             });
 			$('#monitor').text('STOP'); 
 		}

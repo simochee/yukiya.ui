@@ -37,7 +37,7 @@ var driver = function driver(e) {
 				// 停止
 				socket.emit("stop");
 				$('#guideline').css({
-					transform: 'rotate(0)'
+					transform: 'rotate(35deg)'
 				});
 				$('#monitor').text('STOP');
 			}
@@ -55,15 +55,16 @@ var driver = function driver(e) {
 				// 停止
 				socket.emit("stop");
 				$('#guideline').css({
-					transform: 'rotate(0)'
+					transform: 'rotate(35deg)'
 				});
 				$('#monitor').text('STOP');
 			}
 		} else {
+			$('#message').text('Stop');
 			// 停止
 			socket.emit("stop");
 			$('#guideline').css({
-				transform: 'rotate(0)'
+				transform: 'rotate(35deg)'
 			});
 			$('#monitor').text('STOP');
 		}
