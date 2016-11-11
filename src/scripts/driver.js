@@ -45,7 +45,7 @@ const driver = (e) => {
 		} else {
 			handle('left-3');
 		}
-	} else if(z < 10) {
+	} else if(z < -10) {
 		if(z > -30) {
 			handle('right-1');
 		} else if(z > -50) {
