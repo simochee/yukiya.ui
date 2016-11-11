@@ -14,6 +14,7 @@ const $ = gulpLoadPlugins();
 gulp.task('babel', () => {
 	return gulp.src([
 			'./src/scripts/fullscreen.js',
+			'./src/scripts/driver.js',
 			'./src/scripts/entry.js'
 		])
 		.pipe(plumber())
