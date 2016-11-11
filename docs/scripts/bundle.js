@@ -12,7 +12,6 @@ var timer = 0;
 
 var driver = function driver(e) {
 	try {
-		console.log('start');
 
 		var y = Math.round(e.beta);
 		var z = Math.round(e.gamma);
@@ -23,5 +22,5 @@ var driver = function driver(e) {
 	}
 };
 
-document.addEventListener('deviceorientation', driver);
+window.addEventListener('deviceorientation', driver);
 "use strict";

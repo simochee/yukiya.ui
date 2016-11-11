@@ -3,7 +3,6 @@ let timer = 0;
 
 const driver = (e) => {
 	try {
-		console.log('start')
 
 		const y = Math.round(e.beta);
 		const z = Math.round(e.gamma);
@@ -15,4 +14,4 @@ const driver = (e) => {
 
 }
 
-document.addEventListener('deviceorientation', driver);
+window.addEventListener('deviceorientation', driver);
