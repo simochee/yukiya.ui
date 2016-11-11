@@ -38,9 +38,9 @@ const driver = (e) => {
 	}
 
 	if(y > 10 && y < 170) {
-		if(y < 30 || y < 150) {
+		if(y < 30 || y > 150) {
 			handle('left-1');
-		} else if(y < 50 || 120) {
+		} else if(y < 50 || y > 120) {
 			handle('left-2');
 		} else {
 			handle('left-3');
