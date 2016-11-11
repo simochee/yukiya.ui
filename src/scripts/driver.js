@@ -24,7 +24,34 @@ const driver = (e) => {
                 	transform: `rotate(${((FR_THR - abs_z) / 40) * 250 - 35}deg)`
                 });
 				$('#monitor').text('FORWERD');                
+			} else {
+				// 停止
+                socket.emit("stop");
+                $('#guideline').css({
+                	transform: `rotate(0)`
+                });
+				$('#monitor').text('STOP'); 
 			}
+ｔ    	}
+		else if(abs_y >= Y_THR && abs_y <= 90) {
+
+		}
+    	else if(abs_z <= BK_THR) {
+    		if(z > 0) {
+    			// 後進
+                socket.emit("back", BK_THR, BK_THR - abs_z);
+                $('#guideline').css({
+                	transform: `rotate(${((FR_THR - abs_z) / 40) * 250 - 35}deg)`
+                });
+				$('#monitor').text('BACK');
+    		} else {
+				// 停止
+                socket.emit("stop");
+                $('#guideline').css({
+                	transform: `rotate(0)`
+                });
+				$('#monitor').text('STOP'); 
+    		}
 		}
 
 		$('#status').text(`${y} / ${z}, ${FR_THR - abs_z}`)

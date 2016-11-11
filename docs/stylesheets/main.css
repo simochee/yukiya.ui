@@ -113,10 +113,10 @@ html, body {
             transform: rotate(-35deg);
     -webkit-transform-origin: center;
             transform-origin: center;
-    -webkit-transition: -webkit-transform .2s linear;
-    transition: -webkit-transform .2s linear;
-    transition: transform .2s linear;
-    transition: transform .2s linear, -webkit-transform .2s linear;
+    -webkit-transition: -webkit-transform .05s linear;
+    transition: -webkit-transform .05s linear;
+    transition: transform .05s linear;
+    transition: transform .05s linear, -webkit-transform .05s linear;
     z-index: 999; }
     .tachometer .guideline .body {
       width: 0;
