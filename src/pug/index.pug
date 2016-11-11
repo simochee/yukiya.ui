@@ -14,7 +14,7 @@ html(lang="ja")
 				small にする
 			.text 画面をタップ
 		.controller#controller
-			.tachometer
+			.tachometer#tachometer
 				.bar.s0: .l
 				.bar.s10: .s
 				.bar.s20: .l
@@ -46,9 +46,9 @@ html(lang="ja")
 							.text.stop STOP
 							.text.back BACK
 
-			.status
-				#status ::: Status Informations :::
-				#message
+			.debug#debug
+					.y#debugY Loading...
+					.z#debugZ Loading...
 
 			.handle#handle(data-step="horizontal")
 				.body.left

@@ -1,0 +1,17 @@
+.debug
+	position: absolute
+	bottom: 0
+	right: 0
+	display: table
+	visibility: hidden
+	z-index: 55555
+	color: #aaa
+	font-family: 'M+ Type-1 (general-j) Regular'
+	.y
+		color: green
+		&::before
+			content: 'Y: '
+	.z
+		color: blue
+		&::before
+			content: 'Z: '

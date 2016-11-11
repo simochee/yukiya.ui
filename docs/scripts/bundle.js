@@ -66,8 +66,20 @@ var driver = function driver(e) {
 		handle('horizontal');
 	}
 
-	$('#status').text(y + ' / ' + z);
+	$('#debugY').text(y);
+	$('#debugZ').text(z);
 };
 
 window.addEventListener('deviceorientation', driver);
-"use strict";
+'use strict';
+
+$(function () {
+	// デバッグ用表示の有無
+	var hash = location.href.match(/#(.+)$/g);
+	var mode = hash ? hash[0].slice(1) : null;
+	if (mode === 'debug') {
+		$('#debug').css({
+			visibility: 'visible'
+		});
+	}
+});

@@ -57,7 +57,8 @@ const driver = (e) => {
 		handle('horizontal');
 	}
 
-	 $('#status').text(`${y} / ${z}`);
+	$('#debugY').text(y);
+	$('#debugZ').text(z);
 }
 
 window.addEventListener('deviceorientation', driver);

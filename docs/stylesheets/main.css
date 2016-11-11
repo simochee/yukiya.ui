@@ -346,11 +346,20 @@ html, body {
     -webkit-animation: flash 1.2s ease infinite;
             animation: flash 1.2s ease infinite; }
 
-.status {
+.debug {
   position: absolute;
   bottom: 0;
   right: 0;
   display: table;
+  visibility: hidden;
   z-index: 55555;
   color: #aaa;
-  font-weight: bold; }
+  font-family: 'M+ Type-1 (general-j) Regular'; }
+  .debug .y {
+    color: green; }
+    .debug .y::before {
+      content: 'Y: '; }
+  .debug .z {
+    color: blue; }
+    .debug .z::before {
+      content: 'Z: '; }
