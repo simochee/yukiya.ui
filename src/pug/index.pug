@@ -6,8 +6,13 @@ html(lang="ja")
 		title Controller
 		link(rel="stylesheet" href="stylesheets/ionicons.min.css")
 		link(rel="stylesheet" href="stylesheets/main.css")
+		script(src="scripts/main.js")
 	body
-		.controller
+		.wrapper
+			.label フルスクリーン
+				small にする
+			.text 画面をタップしてください
+		.controller#controller
 			.tachometer
 				.bar.s0: .l
 				.bar.s10: .s
