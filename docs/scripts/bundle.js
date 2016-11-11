@@ -11,14 +11,17 @@ $(function () {
 var timer = 0;
 
 var driver = function driver(e) {
-	console.log('start');
+	try {
+		console.log('start');
 
-	var y = Math.round(event.beta);
-	var z = Math.round(event.gamma);
+		var y = Math.round(e.beta);
+		var z = Math.round(e.gamma);
 
-	$('#status').text(z + ' / ' + y);
+		$('#status').text(z + ' / ' + y);
+	} catch (e) {
+		$('#status').text(e);
+	}
 };
 
 document.addEventListener('deviceorientation', driver);
-document.addEventListener('load', driver);
 "use strict";
