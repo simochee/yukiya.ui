@@ -8,9 +8,14 @@ $(function () {
 'use strict';
 
 var meter = function meter(speed) {
+	$('#message').text(speed);
 	$('#guideline').css({
 		transform: 'rotate(' + (speed * 250 - 35) + 'deg)'
 	});
+};
+
+var monitor = function monitor(msg) {
+	$('#monitor').text(msg);
 };
 
 var driver = function driver(e) {
@@ -23,15 +28,18 @@ var driver = function driver(e) {
 
 	// 停止判定
 	if (60 > z && z < -60) {
+		monitor('STOP');
 		meter(0);
 	}
-	// 後進判定
+	// 前進判定
 	else if (z <= 60 && z > 0) {
-			meter(z / 60);
+			monitor('FORWERD');
+			meter(1 - z / 60);
 		}
-		// 前進判定
+		// 後進判定
 		else {
-				meter(Math.abs(z) / 60);
+				monitor('BACK');
+				meter(1 - Math.abs(z) / 60);
 			}
 
 	$('#status').text(y + ' / ' + z);

@@ -1,7 +1,12 @@
 const meter = (speed) => {
+	$('#message').text(speed);
 	$('#guideline').css({
 		transform: `rotate(${speed * 250 - 35}deg)`
 	});
+}
+
+const monitor = (msg) => {
+	$('#monitor').text(msg);
 }
 
 const driver = (e) => {
@@ -14,15 +19,18 @@ const driver = (e) => {
 
 	// 停止判定
 	if(60 > z && z < -60) {
+		monitor('STOP');
 		meter(0);
 	}
-	// 後進判定
-	else if(z <= 60 && z > 0) {
-		meter(z / 60)
-	}
 	// 前進判定
+	else if(z <= 60 && z > 0) {
+		monitor('FORWERD');
+		meter(1 - z / 60)
+	}
+	// 後進判定
 	else {
-		meter(Math.abs(z) / 60);
+		monitor('BACK');
+		meter(1 - Math.abs(z) / 60);
 	}
 
 	 $('#status').text(`${y} / ${z}`);
