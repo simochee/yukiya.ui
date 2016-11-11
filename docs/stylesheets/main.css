@@ -1,0 +1,237 @@
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web:600i|Unica+One';
+html, body, div {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.controller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #080a09; }
+
+.tachometer {
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin: -150px;
+  background: url(../../_/tachometer.png);
+  background-size: cover;
+  background: -webkit-linear-gradient(120deg, #3e3c3c, #5c575d);
+  background: linear-gradient(-30deg, #3e3c3c, #5c575d);
+  border-radius: 100%;
+  box-shadow: 0 0 0 20px #151412; }
+  .tachometer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-shadow: inset 0 5px 15px 2px rgba(0, 0, 0, 0.5); }
+  .tachometer .bar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 4px;
+    margin: -2px -150px;
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+    .tachometer .bar .l, .tachometer .bar .s {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+    .tachometer .bar .l {
+      float: left;
+      width: 20px;
+      height: 4px;
+      background: #fff; }
+    .tachometer .bar .s {
+      float: left;
+      width: 12px;
+      height: 4px;
+      background: #fff; }
+    .tachometer .bar.s0 {
+      -webkit-transform: rotate(-35deg);
+              transform: rotate(-35deg); }
+    .tachometer .bar.s10 {
+      -webkit-transform: rotate(-10deg);
+              transform: rotate(-10deg); }
+    .tachometer .bar.s20 {
+      -webkit-transform: rotate(15deg);
+              transform: rotate(15deg); }
+    .tachometer .bar.s30 {
+      -webkit-transform: rotate(40deg);
+              transform: rotate(40deg); }
+    .tachometer .bar.s40 {
+      -webkit-transform: rotate(65deg);
+              transform: rotate(65deg); }
+    .tachometer .bar.s50 {
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+    .tachometer .bar.s60 {
+      -webkit-transform: rotate(115deg);
+              transform: rotate(115deg); }
+    .tachometer .bar.s70 {
+      -webkit-transform: rotate(140deg);
+              transform: rotate(140deg); }
+    .tachometer .bar.s80 {
+      -webkit-transform: rotate(165deg);
+              transform: rotate(165deg); }
+    .tachometer .bar.s90 {
+      -webkit-transform: rotate(190deg);
+              transform: rotate(190deg); }
+    .tachometer .bar.s100 {
+      -webkit-transform: rotate(215deg);
+              transform: rotate(215deg); }
+  .tachometer .ball {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    margin: -17.5px;
+    border-radius: 100%;
+    background: -webkit-linear-gradient(135deg, #212123, #807b7f);
+    background: linear-gradient(-45deg, #212123, #807b7f);
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.5); }
+  .tachometer .guideline {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 8px;
+    margin: -4px -150px;
+    -webkit-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-transition: -webkit-transform .2s linear;
+    transition: -webkit-transform .2s linear;
+    transition: transform .2s linear;
+    transition: transform .2s linear, -webkit-transform .2s linear;
+    z-index: 999; }
+    .tachometer .guideline .body {
+      width: 0;
+      height: 0;
+      border-right: 180px solid red;
+      border-top: 4px solid transparent;
+      border-left: 0;
+      border-bottom: 4px solid transparent; }
+  .tachometer:hover .guideline {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg); }
+  .tachometer .speed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 50px;
+    margin: -25px -150px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+    .tachometer .speed .char {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 25px; }
+    .tachometer .speed.s0 {
+      -webkit-transform: rotate(-35deg);
+              transform: rotate(-35deg); }
+      .tachometer .speed.s0 .char {
+        -webkit-transform: rotate(35deg);
+                transform: rotate(35deg); }
+    .tachometer .speed.s20 {
+      -webkit-transform: rotate(15deg);
+              transform: rotate(15deg); }
+      .tachometer .speed.s20 .char {
+        -webkit-transform: rotate(-15deg);
+                transform: rotate(-15deg); }
+    .tachometer .speed.s40 {
+      -webkit-transform: rotate(65deg);
+              transform: rotate(65deg); }
+      .tachometer .speed.s40 .char {
+        -webkit-transform: rotate(-65deg);
+                transform: rotate(-65deg); }
+    .tachometer .speed.s60 {
+      -webkit-transform: rotate(115deg);
+              transform: rotate(115deg); }
+      .tachometer .speed.s60 .char {
+        -webkit-transform: rotate(-115deg);
+                transform: rotate(-115deg); }
+    .tachometer .speed.s80 {
+      -webkit-transform: rotate(165deg);
+              transform: rotate(165deg); }
+      .tachometer .speed.s80 .char {
+        -webkit-transform: rotate(-165deg);
+                transform: rotate(-165deg); }
+    .tachometer .speed.s100 {
+      -webkit-transform: rotate(215deg);
+              transform: rotate(215deg); }
+      .tachometer .speed.s100 .char {
+        -webkit-transform: rotate(-215deg);
+                transform: rotate(-215deg); }
+  .tachometer .display {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 120px;
+    height: 30px;
+    margin: -15px -71px;
+    padding: 5px 8px;
+    background: #3b383f;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    border-left: #333137 solid 3px;
+    border-right: #333137 solid 3px;
+    border-top: #403d44 solid 1px;
+    border-bottom: #2c2a2f solid 3px; }
+    .tachometer .display .monitor {
+      width: 100%;
+      height: 100%;
+      background: #80a09f;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); }
+      .tachometer .display .monitor .text {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 16px;
+        color: #243030;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        font-family: 'Unica One', cursive; }
+
+.handle .body {
+  position: absolute;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  margin-top: -150px; }
+  .handle .body .arrow {
+    position: absolute;
+    top: 50%;
+    height: 300px;
+    margin-top: -150px;
+    line-height: 300px; }
+    .handle .body .arrow.step1 {
+      font-size: 200px; }
+    .handle .body .arrow.step2 {
+      font-size: 190px; }
+    .handle .body .arrow.step3 {
+      font-size: 180px; }
+  .handle .body.left {
+    left: 0; }
+    .handle .body.left .step1 {
+      left: 0; }
+    .handle .body.left .step2 {
+      left: 70px; }
+    .handle .body.left .step3 {
+      left: 140px; }

@@ -1,0 +1,173 @@
+
+.tachometer
+	overflow: hidden
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 300px
+	height: 300px
+	margin: -150px
+	background: url(../../_/tachometer.png)
+	background-size: cover
+	background: linear-gradient(-30deg, #3e3c3c, #5c575d)
+	border-radius: 100%
+	box-shadow: 0 0 0 20px #151412
+	&::after
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		border-radius: 100%
+		box-shadow: inset 0 5px 15px 2px rgba(#000, 0.5)
+	.bar
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 300px
+		height: 4px
+		margin: -2px -150px
+		transform-origin: center center
+		.l, .s
+			box-shadow: 0 0 2px rgba(#000, 0.2)
+		.l
+			float: left
+			width: 20px
+			height: 4px
+			background: #fff
+		.s
+			float: left
+			width: 12px
+			height: 4px
+			background: #fff
+		&.s0
+			transform: rotate(-35deg)
+		&.s10
+			transform: rotate(-10deg)
+		&.s20
+			transform: rotate(15deg)
+		&.s30
+			transform: rotate(40deg)
+		&.s40
+			transform: rotate(65deg)
+		&.s50
+			transform: rotate(90deg)
+		&.s60
+			transform: rotate(115deg)
+		&.s70
+			transform: rotate(140deg)
+		&.s80
+			transform: rotate(165deg)
+		&.s90
+			transform: rotate(190deg)
+		&.s100
+			transform: rotate(215deg)
+
+	.ball
+		position: absolute
+		left: 50%
+		top: 50%
+		width: 35px
+		height: 35px
+		margin: -(35px / 2)
+		border-radius: 100%
+		background: linear-gradient(-45deg, #212123, #807b7f)
+		box-shadow: 0 3px 10px 2px rgba(#000, 0.5)
+
+	.guideline
+		$color: red
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 300px
+		height: 8px
+		margin: -4px -150px
+		transform: rotate(-35deg)
+		transform-origin: center
+		transition: transform .2s linear
+		z-index: 999
+		.body
+			width: 0
+			height: 0
+			border:
+				right: 180px solid $color
+				top: 4px solid transparent
+				left: 0
+				bottom: 4px solid transparent
+	&:hover
+		.guideline
+			transform: rotate(80deg)
+
+	.speed
+		position: absolute
+		top: 50%
+		left: 50%
+		width: 300px
+		height: 50px
+		margin: -25px -150px
+		font-family: 'Titillium Web', sans-serif
+		color: #fff
+		text-shadow: 0 2px 3px rgba(#000, 0.3)
+		.char
+			width: 50px
+			height: 50px
+			margin-left: 20px
+			text-align: center
+			line-height: 50px
+			font-size: 25px
+		&.s0
+			transform: rotate(-35deg)
+			.char
+				transform: rotate(35deg)
+		&.s20
+			transform: rotate(15deg)
+			.char
+				transform: rotate(-15deg)
+		&.s40
+			transform: rotate(65deg)
+			.char
+				transform: rotate(-65deg)
+		&.s60
+			transform: rotate(115deg)
+			.char
+				transform: rotate(-115deg)
+		&.s80
+			transform: rotate(165deg)
+			.char
+				transform: rotate(-165deg)
+		&.s100
+			transform: rotate(215deg)
+			.char
+				transform: rotate(-215deg)
+	.display
+		$color: #3b383f
+		position: absolute
+		bottom: 40px
+		left: 50%
+		width: 120px
+		height: 30px
+		margin: -15px -71px
+		padding: 5px 8px
+		background: $color
+		box-shadow: 0 3px 10px rgba(#000, 0.5)
+		border: 
+			left: darken($color, 3%) solid 3px
+			right: darken($color, 3%) solid 3px
+			top: lighten($color, 2%) solid 1px
+			bottom: darken($color, 6%) solid 3px
+		.monitor
+			$monitor: #80a09f
+			width: 100%
+			height: 100%
+			background: $monitor
+			box-shadow: inset 0 2px 4px rgba(#000, 0.3)
+			.text
+				width: 100%
+				height: 30px
+				line-height: 30px
+				text-align: center
+				font-size: 16px
+				color: darken($monitor, 40%)
+				text-shadow: 0 0 10px rgba(#000, 0.5)
+				font-family: 'Unica One', cursive

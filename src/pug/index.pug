@@ -1,0 +1,44 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="utf8")
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		title Controller
+		link(rel="stylesheet" href="stylesheets/ionicons.min.css")
+		link(rel="stylesheet" href="stylesheets/main.css")
+	body
+		.controller
+			.tachometer
+				.bar.s0: .l
+				.bar.s10: .s
+				.bar.s20: .l
+				.bar.s30: .s
+				.bar.s40: .l
+				.bar.s50: .s
+				.bar.s60: .l
+				.bar.s70: .s
+				.bar.s80: .l
+				.bar.s90: .s
+				.bar.s100: .l
+
+				.ball
+
+				.guideline
+					.body
+
+				.speed.s0: .char 0
+				.speed.s20: .char 20
+				.speed.s40: .char 40
+				.speed.s60: .char 60
+				.speed.s80: .char 80
+				.speed.s100: .char 100
+
+				.display
+					.monitor
+						.text STOP
+
+			.handle
+				.body.left
+					.arrow.step1: span.ion-chevron-left
+					.arrow.step2: span.ion-chevron-left
+					.arrow.step3: span.ion-chevron-left

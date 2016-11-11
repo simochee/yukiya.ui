@@ -1,0 +1,21 @@
+p.resizeimage img{
+    width : 100%;
+}
+
+div#result
+{
+    text-size : 100%;
+
+    position : absolute;
+    left : 50%;
+    top : 10%;
+}
+
+div#value
+{
+    text-size : 100%;
+
+    position : absolute;
+    left : 50%;
+    top : 50%;
+}
