@@ -29,8 +29,9 @@ var driver = function driver(e) {
 				// 前進
 				socket.emit("straight", FR_THR, FR_THR - abs_z);
 				$('#guideline').css({
-					// transform: `rotate(${((FR_THR - abs_z) / ) - 35}deg)`
+					transform: 'rotate(' + ((FR_THR - abs_z) / 40 * 250 - 35) + 'deg)'
 				});
+				$('#monitor').text('FORWERD');
 			}
 		}
 
