@@ -27,10 +27,11 @@ var driver = function driver(e) {
 		if (abs_z <= FR_THR) {
 			if (z > 0) {
 				// 前進
-				// socket.emit("straight", FR_THR, FR_THR - abs_z);
-				$('#status').text(FR_THR - abs_z);
+				socket.emit("straight", FR_THR, FR_THR - abs_z);
 			}
 		}
+
+		$('#status').text(y + ' / ' + z);
 	}
 };
 
