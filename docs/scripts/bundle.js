@@ -19,58 +19,12 @@ var Y_THR = 40;
 var driver = function driver(e) {
 	var y = Math.round(e.beta);
 	var z = Math.round(e.gamma);
-	if (new Date() - timer > 200) {
-		timer = new Date();
-		var abs_y = Math.abs(y);
-		var abs_z = Math.abs(z);
 
-		if (abs_z <= FR_THR) {
-			$('#message').text('Forwerd');
-			if (z < 0) {
-				// 前進
-				socket.emit("straight", FR_THR, FR_THR - abs_z);
-				$('#guideline').css({
-					transform: 'rotate(' + ((FR_THR - abs_z) / 40 * 250 - 35) + 'deg)'
-				});
-				$('#monitor').text('FORWERD');
-			} else {
-				// 停止
-				socket.emit("stop");
-				$('#guideline').css({
-					transform: 'rotate(-35deg)'
-				});
-				$('#monitor').text('STOP');
-			}
-		} else if (abs_y >= Y_THR && abs_y <= 90) {} else if (abs_z <= BK_THR) {
-			$('#message').text('back');
-			if (z > 0) {
-				$('#message').text('back - ' + z);
-				// 後進
-				socket.emit("back", BK_THR, BK_THR - abs_z);
-				$('#guideline').css({
-					transform: 'rotate(' + ((BK_THR - abs_z) / 40 * 250 - 35) + 'deg)'
-				});
-				$('#monitor').text('BACK');
-			} else {
-				// 停止
-				socket.emit("stop");
-				$('#guideline').css({
-					transform: 'rotate(-35deg)'
-				});
-				$('#monitor').text('STOP');
-			}
-		} else {
-			$('#message').text('Stop');
-			// 停止
-			socket.emit("stop");
-			$('#guideline').css({
-				transform: 'rotate(-35deg)'
-			});
-			$('#monitor').text('STOP');
-		}
+	/*
+  * 値を送信
+  */
 
-		$('#status').text(y + ' / ' + z + ', abs ? ' + (BK_THR - abs_z));
-	}
+	$('#status').text(y + ' / ' + z);
 };
 
 window.addEventListener('deviceorientation', driver);

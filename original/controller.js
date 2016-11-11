@@ -15,6 +15,11 @@ window.addEventListener('deviceorientation', function(event)
         timer = new Date;
         var y = Math.round(event.beta);
         var z = Math.round(event.gamma);
+
+        // 送信
+
+        
+
         var abs_y = Math.abs(y);
         var abs_z = Math.abs(z);
                 
