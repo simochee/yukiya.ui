@@ -46,9 +46,9 @@ const driver = (e) => {
 			handle('left-3');
 		}
 	} else if(y < -10 && y > -170) {
-		if(y > -30 || y > -150) {
+		if(y > -30 || y < -150) {
 			handle('right-1');
-		} else if(y > -50 || y > -120) {
+		} else if(y > -50 || y < -120) {
 			handle('right-2');
 		} else {
 			handle('right-3');
