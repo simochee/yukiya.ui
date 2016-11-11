@@ -163,15 +163,21 @@
 			height: 100%
 			background: $monitor
 			box-shadow: inset 0 2px 4px rgba(#000, 0.3)
-			&[data-state="forward"]
+			&[data-state="debug"]
 				.inner
 					transform: translateY(0)
-			&[data-state="stop"]
+			&[data-state="forward"]
 				.inner
 					transform: translateY(-30px)
-			&[data-state="back"]
+			&[data-state="stop"]
 				.inner
 					transform: translateY(-60px)
+			&[data-state="back"]
+				.inner
+					transform: translateY(-90px)
+			&[data-state="play"]
+				.inner
+					transform: translateY(-120px)
 			.inner
 				width: 100%
 				height: 90px

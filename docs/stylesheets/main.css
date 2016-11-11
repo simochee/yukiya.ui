@@ -206,15 +206,21 @@ html, body {
       height: 100%;
       background: #80a09f;
       box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); }
-      .tachometer .display .monitor[data-state="forward"] .inner {
+      .tachometer .display .monitor[data-state="debug"] .inner {
         -webkit-transform: translateY(0);
                 transform: translateY(0); }
-      .tachometer .display .monitor[data-state="stop"] .inner {
+      .tachometer .display .monitor[data-state="forward"] .inner {
         -webkit-transform: translateY(-30px);
                 transform: translateY(-30px); }
-      .tachometer .display .monitor[data-state="back"] .inner {
+      .tachometer .display .monitor[data-state="stop"] .inner {
         -webkit-transform: translateY(-60px);
                 transform: translateY(-60px); }
+      .tachometer .display .monitor[data-state="back"] .inner {
+        -webkit-transform: translateY(-90px);
+                transform: translateY(-90px); }
+      .tachometer .display .monitor[data-state="play"] .inner {
+        -webkit-transform: translateY(-120px);
+                transform: translateY(-120px); }
       .tachometer .display .monitor .inner {
         width: 100%;
         height: 90px;

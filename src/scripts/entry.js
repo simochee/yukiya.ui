@@ -17,12 +17,18 @@ $(function() {
 			if(count >= 10) {
 				if(mode === 'debug') {
 					// 終了
-					location.hash = '';
-					location.reload();
+					$('#monitor').attr('data-state', 'play');
+					setTimeout(() => {
+						location.hash = '';
+						location.reload();
+					}, 1500);
 				} else {
 					// 移行
-					location.hash = 'debug';
-					location.reload();
+					$('#monitor').attr('data-state', 'debug');
+					setTimeout(() => {
+						location.hash = 'debug';
+						location.reload();
+					}, 1500);
 				}
 			}
 			count++;
