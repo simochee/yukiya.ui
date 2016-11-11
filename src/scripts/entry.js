@@ -21,14 +21,14 @@ $(function() {
 					setTimeout(() => {
 						location.hash = '';
 						location.reload();
-					}, 1500);
+					}, 2000);
 				} else {
 					// 移行
 					$('#monitor').attr('data-state', 'debug');
 					setTimeout(() => {
 						location.hash = 'debug';
 						location.reload();
-					}, 1500);
+					}, 2000);
 				}
 			}
 			count++;

@@ -96,14 +96,14 @@ $(function () {
 					setTimeout(function () {
 						location.hash = '';
 						location.reload();
-					}, 1500);
+					}, 2000);
 				} else {
 					// 移行
 					$('#monitor').attr('data-state', 'debug');
 					setTimeout(function () {
 						location.hash = 'debug';
 						location.reload();
-					}, 1500);
+					}, 2000);
 				}
 			}
 			count++;
