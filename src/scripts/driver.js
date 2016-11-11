@@ -28,7 +28,7 @@ const driver = (e) => {
 				// 停止
                 socket.emit("stop");
                 $('#guideline').css({
-                	transform: `rotate(35deg)`
+                	transform: `rotate(-35deg)`
                 });
 				$('#monitor').text('STOP'); 
 			}
@@ -37,20 +37,20 @@ const driver = (e) => {
 
 		}
     	else if(abs_z <= BK_THR) {
-			$('#message').text('Forwerd')
+			$('#message').text('back')
     		if(z > 0) {
-				$('#message').text('Forwerd - ' + z)
+				$('#message').text('back - ' + z)
     			// 後進
                 socket.emit("back", BK_THR, BK_THR - abs_z);
                 $('#guideline').css({
-                	transform: `rotate(${((FR_THR - abs_z) / 40) * 250 - 35}deg)`
+                	transform: `rotate(${((BK_THR - abs_z) / 40) * 250 - 35}deg)`
                 });
 				$('#monitor').text('BACK');
     		} else {
 				// 停止
                 socket.emit("stop");
                 $('#guideline').css({
-                	transform: `rotate(35deg)`
+                	transform: `rotate(-35deg)`
                 });
 				$('#monitor').text('STOP'); 
     		}
@@ -59,12 +59,12 @@ const driver = (e) => {
 			// 停止
             socket.emit("stop");
             $('#guideline').css({
-            	transform: `rotate(35deg)`
+            	transform: `rotate(-35deg)`
             });
 			$('#monitor').text('STOP'); 
 		}
 
-		$('#status').text(`${y} / ${z}, abs ? ${FR_THR - abs_z}`)
+		$('#status').text(`${y} / ${z}, abs ? ${BK_THR - abs_z}`)
 	}
 }
 
